@@ -4,7 +4,18 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="2">
+
+      <div className="section">
+        Short Bio: My Name is Caden Manwiller
+      </div>
+      <div className="section">
+        My experience
+      </div>
+      <div className="section">
+        My Interests
+      </div>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
