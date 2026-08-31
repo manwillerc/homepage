@@ -1,35 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import About from './pages/About';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import './App.scss';
 
 function App() {
   return (
     <div className="App" id="2">
+      <Header />
 
-      <div className="section">
-        Short Bio: My Name is Caden Manwiller
-      </div>
-      <div className="section">
-        My experience
-      </div>
-      <div className="section">
-        My Interests
-      </div>
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="section-grid">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
     </div>
   );
 }
