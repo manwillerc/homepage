@@ -1,31 +1,23 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import logo from '../logo.svg';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
-  const navigate = useNavigate();
-
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-      <nav className="page-navigation" aria-label="Main navigation">
-        <button type="button" onClick={() => navigate('/')}>Home</button>
-        <button type="button" onClick={() => navigate('/projects')}>Projects</button>
-        <button type="button" onClick={() => navigate('/about')}>About</button>
-      </nav>
+      <div className="header-inner">
+        <NavLink className="brand" to="/" aria-label="Caden Manwiller home">
+          <span className="brand-mark">CM</span>
+          <span>Caden Manwiller</span>
+        </NavLink>
+        <nav className="page-navigation" aria-label="Main navigation">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
+      </div>
     </header>
   );
 }
 
 export default Header;
+
