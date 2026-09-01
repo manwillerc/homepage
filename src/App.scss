@@ -180,6 +180,103 @@ $page-width: 72rem;
   }
 }
 
+.contact-section {
+  width: min(calc(100% - 2rem), $page-width);
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(14rem, 0.6fr);
+  align-items: end;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at 95% 5%, rgba($accent-light, 0.16), transparent 18rem), $ink;
+  color: $surface;
+  box-shadow: 0 1.5rem 4rem rgba($ink, 0.14);
+}
+
+.contact-copy {
+  max-width: 43rem;
+
+  h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 3.5vw, 3.25rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+  }
+
+  > p:last-child {
+    max-width: 37rem;
+    margin: 1rem 0 0;
+    color: rgba($surface, 0.68);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+.contact-eyebrow {
+  margin: 0 0 0.75rem;
+  color: #8ccbc3;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-button,
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+  }
+}
+
+.contact-button {
+  background: $accent-light;
+  color: $ink;
+
+  span { font-size: 1.25rem; }
+
+  &:hover,
+  &:focus-visible { background: $surface; }
+}
+
+.contact-link {
+  border: 1px solid rgba($surface, 0.2);
+  color: $surface;
+
+  &:hover,
+  &:focus-visible { background: rgba($surface, 0.08); }
+}
+
+.contact-footer-note {
+  margin: 1.25rem 0 0;
+  color: $ink-soft;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 @media (max-width: 760px) {
   .App-header {
     .header-inner {
@@ -206,6 +303,10 @@ $page-width: 72rem;
       margin-bottom: 2.5rem;
     }
   }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -214,4 +315,3 @@ $page-width: 72rem;
     transition: none !important;
   }
 }
-
