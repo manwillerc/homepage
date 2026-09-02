@@ -180,6 +180,101 @@ $page-width: 72rem;
   }
 }
 
+.projects-page {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.projects-header {
+  max-width: 52rem;
+
+  h1 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid $line;
+  border-radius: 1.25rem;
+  background: rgba($surface, 0.84);
+  box-shadow: 0 1rem 3rem rgba($ink, 0.04);
+
+  &:first-child { grid-column: 1 / -1; }
+}
+
+.project-card-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+
+  h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+}
+
+.project-number {
+  padding-top: 0.4rem;
+  color: $accent;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.project-summary {
+  max-width: 42rem;
+  margin: 0.75rem 0 0;
+  color: $ink-soft;
+  line-height: 1.65;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    background: $accent-light;
+    color: $ink;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+}
+
+.project-highlights {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.15rem;
+  color: $ink-soft;
+  line-height: 1.6;
+
+  li::marker { color: $accent; }
+}
+
 .contact-section {
   width: min(calc(100% - 2rem), $page-width);
   margin: 0 auto;
@@ -295,6 +390,10 @@ $page-width: 72rem;
   .card-grid {
     grid-template-columns: 1fr;
   }
+
+  .project-list { grid-template-columns: 1fr; }
+
+  .project-card:first-child { grid-column: auto; }
 
   .content-card {
     min-height: auto;
