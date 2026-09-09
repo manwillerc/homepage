@@ -414,3 +414,64 @@ $page-width: 72rem;
     transition: none !important;
   }
 }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid $ink;
+  border-radius: 0.75rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.button-primary { background: $ink; color: $surface; }
+.button-secondary { color: $ink; background: $surface; }
+.button:hover { box-shadow: 0 4px 14px rgba($ink, 0.15); }
+.text-link { display: inline-block; margin-top: 1.5rem; color: $accent; font-weight: 650; text-underline-offset: 0.25em; }
+.card-detail { display: block; margin-top: 1.5rem; color: $ink-soft; font-size: 0.875rem; }
+.about-page { display: grid; gap: clamp(2.5rem, 6vw, 4.5rem); }
+.resume-section {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid $line;
+  h2 { margin: 0; font-family: Georgia, serif; font-size: 1.75rem; font-weight: 500; }
+}
+.resume-card {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: 1.25rem;
+  h3 { margin: 0; font-size: 1.3rem; }
+  p { line-height: 1.65; }
+  .muted { color: $ink-soft; }
+  .project-highlights { margin-top: 1.5rem; }
+}
+.skills-grid { display: grid; gap: 1.75rem; }
+.skill-group h3 { margin: 0 0 0.8rem; font-size: 1rem; }
+a:focus-visible { outline: 3px solid $accent; outline-offset: 4px; }
+.skip-link {
+  position: fixed;
+  top: -5rem;
+  left: 1rem;
+  z-index: 20;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: $ink;
+  color: $surface;
+  &:focus { top: 1rem; }
+}
+@media (max-width: 760px) {
+  .resume-section { grid-template-columns: 1fr; gap: 1.25rem; }
+}

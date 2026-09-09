@@ -5,10 +5,10 @@ function Contact() {
     <footer className="contact-section">
       <div className="contact-card">
         <div className="contact-copy">
-          <p className="contact-eyebrow">Have a project in mind?</p>
+          <p className="contact-eyebrow">Let’s connect</p>
           <h2>Let&rsquo;s build something thoughtful together.</h2>
           <p>
-            I&rsquo;m always happy to talk about new projects, creative ideas, or
+            I&rsquo;m always happy to talk about new projects, software development, or
             opportunities to collaborate.
           </p>
         </div>
@@ -18,7 +18,10 @@ function Contact() {
             Get in touch <span aria-hidden="true">&rarr;</span>
           </a>
           <a className="contact-link" href="https://github.com/manwillerc" target="_blank" rel="noreferrer">
-            GitHub
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a className="contact-link" href={`${process.env.PUBLIC_URL}/CadenManwillerSoftwareEngineer.pdf`} download>
+            Download resume <span aria-hidden="true">↓</span>
           </a>
         </div>
       </div>
